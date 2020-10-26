@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
     inputs:
       tag_version:
-        description: 'Person to greet'
+        description: 'tag_version'
         required: true
         default: 'v0.0.0'
 

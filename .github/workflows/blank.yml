@@ -16,7 +16,7 @@ on:
       tag_version:
         description: 'Person to greet'
         required: true
-        default: 'v.0.0.0'
+        default: 'v0.0.0'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

@@ -3,7 +3,7 @@
 
 `git_add_tag.yml`
 
-```
+```yaml
 name: GitTagAdd
 
 on:

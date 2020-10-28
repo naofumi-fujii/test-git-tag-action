@@ -3,7 +3,7 @@
 adds git tag via github action
 
 
-# usage
+## usage
 
 ```yaml
 name: GitTagAdd

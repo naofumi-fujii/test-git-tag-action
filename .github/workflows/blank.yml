@@ -11,7 +11,7 @@ name: CI
 #   pull_request:
 #     branches: [ main ]
 on:
-  push:
+  create:
     tags:
     - '*'
 

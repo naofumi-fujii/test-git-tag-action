@@ -25,20 +25,19 @@ jobs:
       - name: Run a multi-line script
         run: |
           git fetch --tags
-          git tag | tail -n 1
+
           head_commit=$(git show HEAD --format=format:"%H" | head -n 1)
           latest_tag=$(git tag | tail -n 1)
           latest_tag_commit=$(git show ${latest_tag} --format=format:"%H" | head -n 1)
 
-          echo $latest_tag
-          echo $head_commit
-          echo $latest_tag_commit
+          # echo $latest_tag
+          # echo $head_commit
+          # echo $latest_tag_commit
 
           if [ $head_commit = $latest_tag_commit ]; then
-            echo 0
             exit 0
           else
-            echo 1
+            echo 'tag missing on HEAD commit'
             exit 1
           fi
 

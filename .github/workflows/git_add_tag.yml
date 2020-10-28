@@ -25,8 +25,10 @@ jobs:
       - name: Run a multi-line script
         run: |
           head_commit=$(git show HEAD --format=format:"%H" | head -n 1)
-          latest_tag_commit=$(git show $(git tag | tail -n 1) --format=format:"%H" | head -n 1)
+          latest_tag=$(git tag | tail -n 1)
+          latest_tag_commit=$(git show ${latest_tag} --format=format:"%H" | head -n 1)
 
+          echo $latest_tag
           echo $head_commit
           echo $latest_tag_commit
 

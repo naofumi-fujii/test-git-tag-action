@@ -24,10 +24,13 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          # latest tag commit == HEAD
-          if [ git show HEAD --format=format:"%H" | head -n 1 = git show  $(git tag | tail -n 1) --format=format:"%H" | head -n 1 ]; then
+          head_commit=$(git show HEAD --format=format:"%H" | head -n 1)
+          latest_tag_commit=$(git show $(git tag | tail -n 1) --format=format:"%H" | head -n 1)
+          if [ $head_commit = $latest_tag_commit ]; then
+            echo 0
             exit 0
           else
+            echo 1
             exit 1
           fi
 

@@ -24,6 +24,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
+          git fetch --tags
+          git tag | tail -n 1
           head_commit=$(git show HEAD --format=format:"%H" | head -n 1)
           latest_tag=$(git tag | tail -n 1)
           latest_tag_commit=$(git show ${latest_tag} --format=format:"%H" | head -n 1)

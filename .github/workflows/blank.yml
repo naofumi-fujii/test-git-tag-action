@@ -7,7 +7,7 @@ name: CI
 
 on:
   workflow_run:
-    workflows: ["GitAddTag"]
+    workflows: ["GitTagAdd"]
     branches: [main]
     types:
       - completed

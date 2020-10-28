@@ -26,7 +26,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG_VERSION: ${{ github.event.inputs.tag_version }}
-        if: failure()
-        run: |
-          echo 'failed'
-          && exit 1

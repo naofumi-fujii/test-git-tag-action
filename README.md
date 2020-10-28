@@ -1,6 +1,9 @@
 # test-git-tag-action
 
+adds git tag via github action
 
+
+# usage
 
 ```yaml
 name: GitTagAdd

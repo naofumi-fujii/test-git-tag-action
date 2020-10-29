@@ -1,3 +1,3 @@
-# test-git-tag-action
+# test-github-action
 
 test repo for github action

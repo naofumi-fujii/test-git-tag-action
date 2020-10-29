@@ -1,5 +1,5 @@
 
-name: Github Push Action
+name: Github Tag Push Action
 
 on:
  workflow_dispatch:
@@ -17,7 +17,7 @@ jobs:
         persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 
-    - name: add tag
+    - name: Add tag
       run: |
         git fetch --tags
         git tag "${{ github.event.inputs.tag_version }}"

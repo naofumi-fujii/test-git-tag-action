@@ -22,6 +22,10 @@ jobs:
         git fetch --tags
         git tag "${{ github.event.inputs.tag_version }}"
 
+    - run: |
+        echo "${{ github.ref }}"
+        echo "${{ github.sha }}"
+
     - name: Push changes
       uses: naofumi-fujii/github-push-action@master
       with:

@@ -25,6 +25,7 @@ jobs:
 
     - name: Add tag
       run: |
+        # for faster failure
         git fetch --tags
         git tag "${{ github.event.inputs.tag_version }}"
 

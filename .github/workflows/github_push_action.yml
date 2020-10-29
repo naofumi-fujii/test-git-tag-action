@@ -19,6 +19,7 @@ jobs:
         ref: ${{ github.event.inputs.tag_version }}
 
     # - run: |
+    # https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions#github-context
     #     echo "${{ github.ref }}"
     #     echo "${{ github.sha }}"
 

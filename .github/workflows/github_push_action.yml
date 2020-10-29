@@ -47,3 +47,4 @@ jobs:
       if: ${{ failure() }}
       run: |
         echo failure
+        echo ${{ github.event.workflow_run.conclusion == 'succcess' }}

@@ -23,7 +23,7 @@ jobs:
         git tag "${{ github.event.inputs.tag_version }}"
 
     - name: Push changes
-      uses: ad-m/github-push-action@master
+      uses: naofumi-fujii/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.ref }}

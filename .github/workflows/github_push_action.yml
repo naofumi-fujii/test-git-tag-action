@@ -18,18 +18,18 @@ jobs:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
         ref: ${{ github.event.inputs.tag_version }}
 
-    - run: |
-        echo "${{ github.ref }}"
-        echo "${{ github.sha }}"
+    # - run: |
+    #     echo "${{ github.ref }}"
+    #     echo "${{ github.sha }}"
 
-    # - name: Add tag
-    #   run: |
-    #     git fetch --tags
-    #     git tag "${{ github.event.inputs.tag_version }}"
-    #
-    # - name: Push changes
-    #   uses: naofumi-fujii/github-push-action@master
-    #   with:
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
-    #     branch: ${{ github.ref }}
-    #     tags: true
+    - name: Add tag
+      run: |
+        git fetch --tags
+        git tag "${{ github.event.inputs.tag_version }}"
+
+    - name: Push changes
+      uses: naofumi-fujii/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
+        tags: true

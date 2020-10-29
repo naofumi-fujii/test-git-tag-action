@@ -38,4 +38,9 @@ jobs:
     - name: On success
       if: ${{ success() }}
       run: |
-        echo hello
+        echo success
+
+    - name: On failure
+      if: ${{ failure() }}
+      run: |
+        echo failure

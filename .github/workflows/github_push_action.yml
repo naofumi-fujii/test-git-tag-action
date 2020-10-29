@@ -47,5 +47,5 @@ jobs:
       if: ${{ failure() }}
       run: |
         echo failure
-        echo ${{ github.event.workflow_run }}
+        echo ${{ github.event_name }}
         echo ${{ github.event.workflow_run.conclusion }}

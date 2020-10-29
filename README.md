@@ -1,3 +1,3 @@
 # test-github-action
 
-test repo for github action
+repo for testing github actions

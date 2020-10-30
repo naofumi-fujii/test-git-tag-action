@@ -36,16 +36,13 @@ jobs:
         branch: ${{ github.ref }}
         tags: true
 
-    # - name: On success
-    #   if: ${{ success() }}
-    #   uses: peter-evans/repository-dispatch@v1
-    #   with:
-    #     token: ${{ secrets.REPO_ACCESS_TOKEN }}
-    #     event-type: my-event
+    - name: On success
+      if: ${{ success() }}
+      run: |
+        echo ${{ github.event_name }}
 
     - name: On failure
       if: ${{ failure() }}
       run: |
         echo failure
-        # echo ${{ github.event_name }}
         # echo ${{ github.event.workflow_run.conclusion }}

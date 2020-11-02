@@ -29,6 +29,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      # Runs a set of commands using the runners shell
+      - run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          echo ${{ github.event.workflow_run.url }}
+
       - name: exit if workflow_run status is failure
         if: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'failure' }}
         run: |
